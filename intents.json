@@ -1,0 +1,96 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": ["Hi", "Hello", "Hey", "How are you?", "Good morning", "Good afternoon"],
+            "responses": ["Hello! Welcome to Book Recommendation Bot. What book are you looking for today?", "Hi! I can help you find books. Do you have any favorite genres or authors?"],
+            "context": [""]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": ["Bye", "Goodbye", "See you", "Exit", "Quit", "That's all"],
+            "responses": ["Thank you! Happy reading :)", "Goodbye! Enjoy your books!", "Happy reading!"],
+            "context": [""]
+        },
+        {
+            "tag": "search_by_title",
+            "patterns": [
+                "Find a book titled X", 
+                "Do you have 'The Hobbit'?", 
+                "I'm looking for 'Harry Potter'", 
+                "Book titled '1984'",
+                "I want a book about X",
+                "Do you know book X?",
+                "Please find book X"
+            ],
+            "responses": ["Searching for books with title: {title}..."],
+            "context": ["title"],
+            "action": "search_db"
+        },
+        {
+            "tag": "search_by_author",
+            "patterns": [
+                "Books by J.K. Rowling", 
+                "Works by Tolkien", 
+                "Author Neil Gaiman", 
+                "Find books from Stephen King",
+                "What books did X write?",
+                "Recommend books by author X",
+                "I like books by X"
+            ],
+            "responses": ["Searching for books by: {author}..."],
+            "context": ["author"],
+            "action": "search_db"
+        },
+        {
+            "tag": "search_by_rating",
+            "patterns": [
+                "Recommend highly rated books", 
+                "Books with rating above 4", 
+                "Best books", 
+                "What are the most popular books?",
+                "Books with highest ratings",
+                "Recommend good books",
+                "Top books this year"
+            ],
+            "responses": ["Showing books with rating > {min_rating}..."],
+            "context": ["min_rating"],
+            "action": "search_db"
+        },
+        {
+            "tag": "search_by_language",
+            "patterns": [
+                "English books", 
+                "Do you have Spanish books?", 
+                "Find French books", 
+                "Books in German",
+                "Recommend books in X language",
+                "I want books in X"
+            ],
+            "responses": ["Searching for books in: {language}..."],
+            "context": ["language"],
+            "action": "search_db"
+        },
+        {
+            "tag": "random_recommendation",
+            "patterns": [
+                "Recommend a book", 
+                "I need book suggestions", 
+                "Random book", 
+                "Surprise me",
+                "What should I read?",
+                "Give me a recommendation",
+                "I want to try a new book"
+            ],
+            "responses": ["Here's a random recommendation for you..."],
+            "context": [""],
+            "action": "fetch_random"
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["Thank you", "Thanks", "Appreciate it", "Awesome thanks"],
+            "responses": ["You're welcome!", "Happy to help!", "My pleasure!"],
+            "context": [""]
+        }
+    ]
+}
